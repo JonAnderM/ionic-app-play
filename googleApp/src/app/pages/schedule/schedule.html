@@ -1,0 +1,119 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  
+  <style type="text/css">
+    #scrolly{
+
+        overflow-x: hidden;
+        width: 1000px;
+        height: 190px;
+        overflow: auto;
+        overflow-y: hidden;
+        margin: 0 auto;
+        white-space: nowrap
+    }
+
+    img{
+
+        display: inline;
+    }
+</style>
+
+</ion-header>
+<ion-content>
+    <div style="max-width: 90%; margin-left: 3%;">
+        <ion-toolbar>
+          <ion-searchbar style="box-shadow: none !important;" [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Buscar aplicaciones y juegos"><ion-menu-button></ion-menu-button></ion-searchbar>
+        </ion-toolbar>
+      </div>
+    <ion-tabs style="color: #105a01;margin-top: 55px; margin-bottom: 20px; z-index: 12;">
+        <ion-tab-bar slot="top">
+          <ion-tab-button tab="schedule">
+            <ion-label>JUEGOS</ion-label>
+          </ion-tab-button>
+    
+          <ion-tab-button tab="schedule">
+            <ion-label>CONSOLAS</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="schedule">
+            <ion-label>DISPOSITIVOS</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+
+  <ion-title>No te lo pierdas!</ion-title>
+    <div id="scrolly" >
+        <ion-card *ngFor="let item of items" style="max-width: 120px; box-shadow: none !important;">
+          <ion-card-content>
+            <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+            <ion-card-title style="font-size: 12px;">
+                {{item.title}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <ion-title>Consolas y más!</ion-title>
+    <div id="scrolly" >
+        <ion-card *ngFor="let item of newUpdated" style="max-width: 120px; box-shadow: none !important;">
+          <ion-card-content>
+            <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+            <ion-card-title style="font-size: 12px;">
+                {{item.title}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <ion-title>El video es el futuro!</ion-title>
+      <div id="scrolly" >
+          <ion-card *ngFor="let item of mediaVideo" style="max-width: 120px; box-shadow: none !important;">
+            <ion-card-content>
+              <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+              <ion-card-title style="font-size: 12px;">
+                  {{item.title}}
+              </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </div>
+  
+
+  <ion-list-header [hidden]="shownSessions > 0">
+    No Sessions Found
+  </ion-list-header>
+
+  
+</ion-content>
+
+<!--
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="google" (click)="openSocial('Google+', fab)">
+        <ion-icon name="logo-googleplus"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+-->

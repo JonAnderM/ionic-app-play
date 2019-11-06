@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-searchbar placeholder="Buscar aplicaciones y juegos"><ion-menu-button></ion-menu-button></ion-searchbar>
+      <style type="text/css">
+        #scrolly{
+    
+            overflow-x: hidden;
+            width: 1000px;
+            height: 190px;
+            overflow: auto;
+            overflow-y: hidden;
+            margin: 0 auto;
+            white-space: nowrap
+        }
+    
+        img{
+    
+            display: inline;
+        }
+      </style>
+    </ion-toolbar>
+</ion-header>
+    
+    <ion-content>
+        <ion-title>El video es el futuro!</ion-title>
+        <div id="scrolly" >
+            <ion-card *ngFor="let item of mediaVideo" style="max-width: 120px; box-shadow: none !important;">
+              <ion-card-content>
+                <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+                <ion-card-title style="font-size: 12px;">
+                    {{item.title}}
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          </div>
+      <ion-title>No te lo pierdas!</ion-title>
+        <div id="scrolly" >
+            <ion-card *ngFor="let item of items" style="max-width: 120px; box-shadow: none !important;">
+              <ion-card-content>
+                <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+                <ion-card-title style="font-size: 12px;">
+                    {{item.title}}
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          </div>
+          <ion-title>Consolas y más!</ion-title>
+        <div id="scrolly" >
+            <ion-card *ngFor="let item of newUpdated" style="max-width: 120px; box-shadow: none !important;">
+              <ion-card-content>
+                <img src="{{item.image}}" alt="{{item.title}} portada" style="max-width: 100px;"/>
+                <ion-card-title style="font-size: 12px;">
+                    {{item.title}}
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>
+          </div>
+          
+  
+</ion-content>

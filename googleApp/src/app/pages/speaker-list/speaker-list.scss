@@ -1,0 +1,41 @@
+.scroll {
+  background: #ededed;
+}
+
+.speaker-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-card ion-card-header {
+  padding: 0;
+}
+
+.speaker-card ion-card-header .item {
+  padding: 4px 16px;
+}
+
+.speaker-card ion-card-content {
+  flex: 1 1 auto;
+
+  padding: 0;
+}
+
+.scroll-zoom-wrapper {
+  white-space: nowrap;
+}
+
+ion-card {
+  width: 500px !important;
+  display: inline-block;
+}
+
+ion-scroll {
+  min-height: 160px; 
+  height: auto;
+
+      .scroll-content {
+      padding: 0px !important;
+  }    
+}

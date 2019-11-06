@@ -1,0 +1,25 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" >
+    <ion-tab-button tab="schedule" (click)="mostrarNombre(1)">
+      <ion-icon name="logo-game-controller-b"></ion-icon>
+      <ion-label *ngIf="selected">Venta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers" (click)="mostrarNombre(2)">
+      <ion-icon name="pricetags"></ion-icon>
+      <ion-label *ngIf="selected2">Alquiler</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map" (click)="mostrarNombre(3)">
+      <ion-icon name="construct"></ion-icon>
+      <ion-label *ngIf="selected3">Reparación</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about" (click)="mostrarNombre(4)">
+      <ion-icon name="home"></ion-icon>
+      <ion-label *ngIf="selected4">Tienda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

@@ -1,0 +1,111 @@
+<ion-app [class.dark-theme]="dark">
+  <ion-split-pane>
+
+    <ion-menu>
+      <ion-header>
+        
+        <ion-toolbar>
+            <ion-label>D1m1_3 </ion-label>
+          <ion-img style="z-index: -1" src="https://i.pinimg.com/originals/c0/e8/15/c0e815cf1576c720a7d40542268ae613.gif"></ion-img>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+        <ion-list>
+          <ion-list-header>
+            Navigate
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="active" routerDirection="root">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list *ngIf="loggedIn">
+          <ion-list-header>
+            Cuenta
+          </ion-list-header>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/account" routerDirection="root">
+              <ion-icon slot="start" name="person"></ion-icon>
+              <ion-label>
+                Cuenta
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/support" routerDirection="root">
+              <ion-icon slot="start" name="help"></ion-icon>
+              <ion-label>
+                Support
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item button (click)="logout()">
+              <ion-icon slot="start" name="log-out"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+        <ion-list *ngIf="!loggedIn">
+          <ion-list-header>
+            Cuenta
+          </ion-list-header>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/login" routerDirection="root">
+              <ion-icon slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                Login
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/support" routerDirection="root">
+              <ion-icon slot="start" name="help"></ion-icon>
+              <ion-label>
+                Support
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/signup" routerDirection="root">
+              <ion-icon slot="start" name="person-add"></ion-icon>
+              <ion-label>
+                Signup
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <ion-list>
+          <ion-item>
+            <ion-label>
+              Dark Theme
+            </ion-label>
+            <ion-toggle [(ngModel)]="dark"></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet main></ion-router-outlet>
+
+  </ion-split-pane>
+
+</ion-app>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tienda</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-header">
+    <img style="height: 100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWj2w8qSI0wL8UxEp-ozjmfsZDt9kiH5sQ1FyGP_ZybDhU1HPs&s" alt="shop photo">
+  </div>
+  <div class="about-info">
+    <h4 class="ion-padding-start">JuegAlmi</h4>
+
+    <ion-list lines="none">
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked">Encuentranos en:</ion-label>
+        <ion-select>
+          <ion-select-option value="almi" selected>Deusto, BI</ion-select-option>
+          <ion-select-option value="austin">Austin, TX</ion-select-option>
+          <ion-select-option value="chicago">Chicago, IL</ion-select-option>
+          <ion-select-option value="seattle">Seattle, WA</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <p class="ion-padding-start ion-padding-end">
+      Gracias por confiar en nuestros servicios. Nuestra empresa es pionera en ser pionera, por que nuestros diseños y ventas innovadoras realizan una actividad cooperativa y ecologica para con el entorno. Todo lo que nos rodea es muy intuitivo y extuitivo a partes iguales.
+    </p>
+  </div>
+</ion-content>
